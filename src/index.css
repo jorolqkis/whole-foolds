@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #fffaf1;
+  --color-foreground: #34253f;
+  --color-card: rgba(255, 255, 255, 0.78);
+  --color-card-strong: rgba(255, 255, 255, 0.92);
+  --color-popover: #fffdf8;
+  --color-popover-foreground: #34253f;
+  --color-primary: #cb9df0;
+  --color-primary-strong: #bc8ee6;
+  --color-primary-soft: rgba(203, 157, 240, 0.24);
+  --color-primary-foreground: #34253f;
+  --color-secondary: #f0c1e1;
+  --color-secondary-strong: #e9afd6;
+  --color-accent: #fddbbb;
+  --color-accent-strong: #f7c898;
+  --color-muted: rgba(255, 249, 191, 0.45);
+  --color-muted-foreground: #705d79;
+  --color-border: rgba(112, 93, 121, 0.18);
+  --color-input: rgba(112, 93, 121, 0.24);
+  --color-ring: rgba(203, 157, 240, 0.65);
+  --color-success: #7c5f98;
+  --shadow-card: 0 24px 60px -34px rgba(77, 44, 104, 0.32);
+  color: var(--color-foreground);
+  background:
+    radial-gradient(circle at top left, rgba(203, 157, 240, 0.28), transparent 30%),
+    radial-gradient(circle at top right, rgba(240, 193, 225, 0.35), transparent 28%),
+    linear-gradient(180deg, #fffdf7 0%, #fff7ea 45%, #fff9bf 100%);
+  font-family: "Aptos", "Segoe UI Variable", "Trebuchet MS", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(203, 157, 240, 0.28), transparent 30%),
+    radial-gradient(circle at top right, rgba(240, 193, 225, 0.35), transparent 28%),
+    linear-gradient(180deg, #fffdf7 0%, #fff7ea 45%, #fff9bf 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.font-serif {
+  font-family: "Baskerville Old Face", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+}
+
+::selection {
+  background: rgba(203, 157, 240, 0.32);
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-in {
+  animation: float-in 500ms ease-out both;
+}

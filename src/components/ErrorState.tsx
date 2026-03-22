@@ -1,0 +1,26 @@
+import { Button } from './ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
+
+type ErrorStateProps = {
+  message: string
+  onRetry: () => void
+}
+
+export function ErrorState({ message, onRetry }: ErrorStateProps) {
+  return (
+    <Card className="border-[rgba(176,88,120,0.24)] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(240,193,225,0.4))] px-6 py-10">
+      <CardHeader className="pb-4">
+        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[var(--color-muted-foreground)]">
+          API error
+        </p>
+        <CardTitle className="mt-3 text-3xl">The USDA data could not be loaded.</CardTitle>
+      </CardHeader>
+      <CardContent className="pt-0">
+        <p className="max-w-2xl text-sm leading-6 text-[var(--color-foreground)]/82">{message}</p>
+        <Button onClick={onRetry} className="mt-6 rounded-2xl">
+          Try again
+        </Button>
+      </CardContent>
+    </Card>
+  )
+}
