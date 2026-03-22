@@ -76,6 +76,7 @@ function escapeCsv(value: string) {
 }
 
 export function exportFoodsToCsv(foods: FoodListItem[], nutrientColumns: NutrientColumn[]) {
+  const delimiter = ';'
   const headers = ['Food', ...nutrientColumns.map((column) => column.label)]
 
   const rows = foods.map((food) => {
@@ -98,11 +99,11 @@ export function exportFoodsToCsv(foods: FoodListItem[], nutrientColumns: Nutrien
       ...nutrientColumns.map((column) => nutrientMap.get(column.key) ?? ''),
     ]
       .map((value) => escapeCsv(value))
-      .join(',')
+      .join(delimiter)
   })
 
-  const csv = [headers.map(escapeCsv).join(','), ...rows].join('\n')
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' })
+  const csv = [`sep=${delimiter}`, headers.map(escapeCsv).join(delimiter), ...rows].join('\r\n')
+  const blob = new Blob(['\uFEFF', csv], { type: 'text/csv;charset=utf-8;' })
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
   const timestamp = new Date().toISOString().slice(0, 10)
