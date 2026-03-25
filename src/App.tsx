@@ -1,6 +1,7 @@
 import { startTransition, useEffect, useMemo, useState } from 'react'
 import { FoodDetailModal } from './components/FoodDetailModal'
 import { FoodResultsTable } from './components/FoodResultsTable'
+import { HeroSection } from './components/HeroSection'
 import { SearchBar } from './components/SearchBar'
 import { SetupNotice } from './components/SetupNotice'
 import { SiteFooter } from './components/SiteFooter'
@@ -93,32 +94,42 @@ function App() {
         Skip to content
       </a>
 
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col px-4 pb-12 sm:px-6 lg:px-8">
-        <SiteHeader />
+      <main id="main-content" className="flex min-h-screen flex-col">
+        <div className="relative">
+          <div className="absolute inset-x-0 top-0 z-40 px-4 pt-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl">
+              <SiteHeader />
+            </div>
+          </div>
 
-        <main id="main-content" className="mt-6 flex-1 space-y-8">
-          <section id="explorer" className="space-y-5 animate-float-in">
-            <SearchBar
-              value={searchInput}
-              onChange={handleSearchChange}
-              onSubmit={handleSearchSubmit}
-            />
+          <HeroSection activeQuery={query} />
+        </div>
 
-            <FoodResultsTable
-              foods={visibleFoods}
-              isLoading={foundationFoods.isLoading}
-              isError={Boolean(foundationFoods.error)}
-              errorMessage={foundationFoods.error}
-              hasQuery={Boolean(query)}
-              density="comfortable"
-              onOpenFood={handleOpenFood}
-              onRetry={foundationFoods.retry}
-            />
+        <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-8 px-4 pb-12 pt-8 sm:px-6 lg:px-8">
+          <section id="explorer" className="animate-float-in">
+            <div className="flex flex-col gap-5">
+              <SearchBar
+                value={searchInput}
+                onChange={handleSearchChange}
+                onSubmit={handleSearchSubmit}
+              />
+
+              <FoodResultsTable
+                foods={visibleFoods}
+                isLoading={foundationFoods.isLoading}
+                isError={Boolean(foundationFoods.error)}
+                errorMessage={foundationFoods.error}
+                hasQuery={Boolean(query)}
+                density="comfortable"
+                onOpenFood={handleOpenFood}
+                onRetry={foundationFoods.retry}
+              />
+            </div>
           </section>
 
           <SiteFooter />
-        </main>
-      </div>
+        </div>
+      </main>
 
       <FoodDetailModal
         apiKey={apiKey}

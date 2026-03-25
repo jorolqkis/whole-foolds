@@ -8,9 +8,9 @@ type ErrorStateProps = {
 
 export function ErrorState({ message, onRetry }: ErrorStateProps) {
   return (
-    <Card className="border-[rgba(176,88,120,0.24)] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(240,193,225,0.4))] px-6 py-10">
+    <Card className="border-[var(--color-border)] bg-[linear-gradient(180deg,rgba(59,28,50,0.96),rgba(106,30,85,0.72))] px-6 py-10">
       <CardHeader className="pb-4">
-        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[var(--color-muted-foreground)]">
+        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#A64D79]">
           API error
         </p>
         <CardTitle className="mt-3 text-3xl">The USDA data could not be loaded.</CardTitle>

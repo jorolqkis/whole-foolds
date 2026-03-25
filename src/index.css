@@ -1,32 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --color-background: #fffaf1;
-  --color-foreground: #34253f;
-  --color-card: rgba(255, 255, 255, 0.78);
-  --color-card-strong: rgba(255, 255, 255, 0.92);
-  --color-popover: #fffdf8;
-  --color-popover-foreground: #34253f;
-  --color-primary: #cb9df0;
-  --color-primary-strong: #bc8ee6;
-  --color-primary-soft: rgba(203, 157, 240, 0.24);
-  --color-primary-foreground: #34253f;
-  --color-secondary: #f0c1e1;
-  --color-secondary-strong: #e9afd6;
-  --color-accent: #fddbbb;
-  --color-accent-strong: #f7c898;
-  --color-muted: rgba(255, 249, 191, 0.45);
-  --color-muted-foreground: #705d79;
-  --color-border: rgba(112, 93, 121, 0.18);
-  --color-input: rgba(112, 93, 121, 0.24);
-  --color-ring: rgba(203, 157, 240, 0.65);
-  --color-success: #7c5f98;
-  --shadow-card: 0 24px 60px -34px rgba(77, 44, 104, 0.32);
+  --color-background: #191825;
+  --color-foreground: #f5f1ff;
+  --color-card: rgba(43, 38, 67, 0.9);
+  --color-card-strong: rgba(134, 93, 255, 0.22);
+  --color-popover: #221d36;
+  --color-popover-foreground: #f5f1ff;
+  --color-primary: #865dff;
+  --color-primary-strong: #9b79ff;
+  --color-primary-soft: rgba(134, 93, 255, 0.24);
+  --color-primary-foreground: #fdfbff;
+  --color-secondary: rgba(227, 132, 255, 0.22);
+  --color-secondary-strong: rgba(227, 132, 255, 0.34);
+  --color-accent: #ffa3fd;
+  --color-accent-strong: #ffb8fe;
+  --color-muted: rgba(134, 93, 255, 0.18);
+  --color-muted-foreground: rgba(245, 241, 255, 0.72);
+  --color-border: rgba(227, 132, 255, 0.24);
+  --color-input: rgba(134, 93, 255, 0.34);
+  --color-ring: rgba(227, 132, 255, 0.42);
+  --color-success: #c7fff0;
+  --shadow-card: 0 28px 80px -40px rgba(0, 0, 0, 0.82);
   color: var(--color-foreground);
   background:
-    radial-gradient(circle at top left, rgba(203, 157, 240, 0.28), transparent 30%),
-    radial-gradient(circle at top right, rgba(240, 193, 225, 0.35), transparent 28%),
-    linear-gradient(180deg, #fffdf7 0%, #fff7ea 45%, #fff9bf 100%);
+    radial-gradient(circle at top left, rgba(134, 93, 255, 0.2), transparent 30%),
+    radial-gradient(circle at top right, rgba(255, 163, 253, 0.16), transparent 24%),
+    linear-gradient(180deg, #191825 0%, #241d3f 42%, #2d2250 100%);
   font-family: "Aptos", "Segoe UI Variable", "Trebuchet MS", sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -38,15 +38,17 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background:
-    radial-gradient(circle at top left, rgba(203, 157, 240, 0.28), transparent 30%),
-    radial-gradient(circle at top right, rgba(240, 193, 225, 0.35), transparent 28%),
-    linear-gradient(180deg, #fffdf7 0%, #fff7ea 45%, #fff9bf 100%);
+    radial-gradient(circle at top left, rgba(134, 93, 255, 0.2), transparent 30%),
+    radial-gradient(circle at top right, rgba(255, 163, 253, 0.16), transparent 24%),
+    linear-gradient(180deg, #191825 0%, #241d3f 42%, #2d2250 100%);
 }
 
 #root {
@@ -60,12 +62,35 @@ select {
   font: inherit;
 }
 
+.table-scrollbar {
+  scrollbar-width: auto;
+  scrollbar-color: #865dff rgba(255, 255, 255, 0.06);
+}
+
+.table-scrollbar::-webkit-scrollbar {
+  height: 12px;
+}
+
+.table-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.table-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(90deg, #865dff, #e384ff);
+  border: 2px solid rgba(25, 24, 37, 0.92);
+}
+
+.table-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #9b79ff, #ffa3fd);
+}
+
 .font-serif {
   font-family: "Baskerville Old Face", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
 }
 
 ::selection {
-  background: rgba(203, 157, 240, 0.32);
+  background: rgba(227, 132, 255, 0.32);
 }
 
 @keyframes float-in {

@@ -7,7 +7,7 @@ type EmptyStateProps = {
 
 export function EmptyState({ hasQuery }: EmptyStateProps) {
   return (
-    <Card className="border-dashed bg-white/70 px-6 py-16 text-center">
+    <Card className="border-dashed bg-[linear-gradient(180deg,rgba(59,28,50,0.96),rgba(106,30,85,0.58))] px-6 py-16 text-center">
       <CardHeader className="items-center pb-4">
         <Badge>No results</Badge>
         <CardTitle className="mt-3 text-3xl">

@@ -1,4 +1,8 @@
-export function BrandMark() {
+type BrandMarkProps = {
+  inverted?: boolean
+}
+
+export function BrandMark({ inverted = false }: BrandMarkProps) {
   return (
     <div className="flex items-center gap-3">
       <div
@@ -10,8 +14,10 @@ export function BrandMark() {
         <div className="h-6 w-6 rounded-full border border-white/70 bg-[rgba(255,255,255,0.45)]" />
       </div>
       <div>
-        <p className="font-serif text-lg leading-none text-[var(--color-foreground)]">NourishBase</p>
-        <p className="text-xs uppercase tracking-[0.22em] text-[var(--color-muted-foreground)]">
+        <p className={inverted ? 'font-serif text-lg leading-none text-white' : 'font-serif text-lg leading-none text-[var(--color-foreground)]'}>
+          NourishBase
+        </p>
+        <p className={inverted ? 'text-xs uppercase tracking-[0.22em] text-white/64' : 'text-xs uppercase tracking-[0.22em] text-[var(--color-muted-foreground)]'}>
           Foundation Foods Explorer
         </p>
       </div>

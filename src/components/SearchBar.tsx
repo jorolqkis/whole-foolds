@@ -28,7 +28,7 @@ export function SearchBar({ value, onChange, onSubmit }: SearchBarProps) {
   }, [deferredValue, onSubmit])
 
   return (
-    <Card className="bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,249,191,0.55))]">
+    <Card className="bg-[linear-gradient(180deg,rgba(25,24,37,0.96),rgba(134,93,255,0.22))]">
       <CardHeader className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <Badge className="w-fit">Search Foundation Foods</Badge>
@@ -56,7 +56,7 @@ export function SearchBar({ value, onChange, onSubmit }: SearchBarProps) {
             value={value}
             onChange={(event) => onChange(event.target.value)}
             placeholder="Search foods like salmon, oats, yogurt, or sweet potato"
-            className="min-w-0 flex-1 rounded-2xl border-white/70 bg-white/80 px-5"
+            className="min-w-0 flex-1 rounded-2xl bg-[rgba(25,24,37,0.9)] px-5"
           />
           <Button type="submit" size="lg" className="rounded-2xl px-6">
             Search

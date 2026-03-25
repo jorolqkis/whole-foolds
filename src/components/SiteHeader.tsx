@@ -5,7 +5,6 @@ import { Card } from './ui/card'
 const navItems = [
   { label: 'Overview', href: '#overview' },
   { label: 'Explorer', href: '#explorer' },
-  { label: 'Workspace', href: '#workspace' },
   { label: 'Data Notes', href: '#about' },
 ]
 
@@ -13,16 +12,16 @@ export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-40 pt-4">
-      <Card className="border-white/60 bg-white/72 px-4 py-3 backdrop-blur-xl sm:px-5">
+    <header>
+      <Card className="border-white/12 bg-black/38 px-4 py-3 text-white shadow-[0_24px_80px_-32px_rgba(0,0,0,0.85)] backdrop-blur-xl sm:px-5">
         <div className="flex items-center justify-between gap-4">
-          <BrandMark />
+          <BrandMark inverted />
 
           <button
             type="button"
             aria-expanded={isOpen}
             aria-controls="site-nav"
-            className="inline-flex h-10 min-w-20 items-center justify-center rounded-xl border border-[var(--color-border)] bg-white/70 px-3 text-sm font-medium text-[var(--color-foreground)] lg:hidden"
+            className="inline-flex h-10 min-w-20 items-center justify-center rounded-xl border border-white/12 bg-white/8 px-3 text-sm font-medium text-white lg:hidden"
             onClick={() => setIsOpen((current) => !current)}
           >
             {isOpen ? 'Close' : 'Menu'}
@@ -34,7 +33,7 @@ export function SiteHeader() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-full px-4 py-2 text-sm font-medium text-[var(--color-muted-foreground)] transition hover:bg-white/70 hover:text-[var(--color-foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)]"
+                  className="rounded-full px-4 py-2 text-sm font-medium text-white/78 transition hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                 >
                   {item.label}
                 </a>
@@ -42,12 +41,12 @@ export function SiteHeader() {
             </nav>
 
             <div className="flex flex-wrap items-center gap-3">
-              <div className="rounded-full border border-white/60 bg-white/60 px-4 py-2 text-xs uppercase tracking-[0.2em] text-[var(--color-muted-foreground)]">
+              <div className="rounded-full border border-white/12 bg-white/8 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/64">
                 USDA synced
               </div>
               <a
                 href="#explorer"
-                className="inline-flex h-10 items-center justify-center rounded-full bg-[var(--color-primary)] px-5 text-sm font-medium text-[var(--color-primary-foreground)] shadow-[0_14px_32px_-18px_rgba(88,38,126,0.65)] transition-colors hover:bg-[var(--color-primary-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)]"
+                className="inline-flex h-10 items-center justify-center rounded-full bg-white/14 px-5 text-sm font-medium text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
               >
                 Open Explorer
               </a>
@@ -56,13 +55,13 @@ export function SiteHeader() {
         </div>
 
         {isOpen ? (
-          <div id="site-nav" className="mt-4 grid gap-4 border-t border-[var(--color-border)] pt-4 lg:hidden">
+          <div id="site-nav" className="mt-4 grid gap-4 border-t border-white/12 pt-4 lg:hidden">
             <nav aria-label="Mobile primary" className="grid gap-2">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-2xl bg-white/60 px-4 py-3 text-sm font-medium text-[var(--color-foreground)]"
+                  className="rounded-2xl bg-white/8 px-4 py-3 text-sm font-medium text-white"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -70,12 +69,12 @@ export function SiteHeader() {
               ))}
             </nav>
             <div className="flex flex-col gap-3">
-              <div className="rounded-2xl border border-white/60 bg-white/60 px-4 py-3 text-xs uppercase tracking-[0.2em] text-[var(--color-muted-foreground)]">
+              <div className="rounded-2xl border border-white/12 bg-white/8 px-4 py-3 text-xs uppercase tracking-[0.2em] text-white/64">
                 USDA synced
               </div>
               <a
                 href="#explorer"
-                className="inline-flex h-11 items-center justify-center rounded-2xl bg-[var(--color-primary)] px-5 text-sm font-medium text-[var(--color-primary-foreground)]"
+                className="inline-flex h-11 items-center justify-center rounded-2xl bg-white/14 px-5 text-sm font-medium text-white"
                 onClick={() => setIsOpen(false)}
               >
                 Open Explorer

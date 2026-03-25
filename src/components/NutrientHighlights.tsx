@@ -9,9 +9,9 @@ type NutrientHighlightsProps = {
 
 export function NutrientHighlights({ nutrients }: NutrientHighlightsProps) {
   return (
-    <Card className="bg-[linear-gradient(180deg,rgba(203,157,240,0.85),rgba(240,193,225,0.88))] text-[var(--color-foreground)]">
+    <Card className="bg-[linear-gradient(180deg,rgba(134,93,255,0.22),rgba(227,132,255,0.18))] text-[var(--color-foreground)]">
       <CardHeader className="pb-4">
-        <Badge variant="outline" className="w-fit border-white/50 bg-white/25">
+        <Badge variant="outline" className="w-fit border-[var(--color-border)] bg-[rgba(255,255,255,0.05)]">
           Key nutrition
         </Badge>
         <CardTitle className="mt-3 text-3xl">Quick nutrient highlights</CardTitle>
@@ -22,9 +22,9 @@ export function NutrientHighlights({ nutrients }: NutrientHighlightsProps) {
             {nutrients.map((nutrient) => (
               <div
                 key={nutrient.id ?? nutrient.name}
-                className="rounded-[24px] border border-white/50 bg-white/45 p-4"
+                className="rounded-[24px] border border-[var(--color-border)] bg-[rgba(25,24,37,0.72)] p-4"
               >
-                <dt className="text-xs uppercase tracking-[0.18em] text-[var(--color-muted-foreground)]">
+                <dt className="text-xs uppercase tracking-[0.18em] text-[#FFA3FD]">
                   {nutrient.name}
                 </dt>
                 <dd className="mt-2 text-2xl font-semibold text-[var(--color-foreground)]">

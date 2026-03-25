@@ -12,7 +12,7 @@ type MetadataSectionProps = {
 
 export function MetadataSection({ title, items }: MetadataSectionProps) {
   return (
-    <Card className="rounded-[24px] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,249,191,0.45))]">
+    <Card className="rounded-[24px] bg-[linear-gradient(180deg,rgba(25,24,37,0.9),rgba(134,93,255,0.14))]">
       <CardHeader className="pb-4">
         <CardTitle className="text-2xl">{title}</CardTitle>
       </CardHeader>
@@ -21,9 +21,9 @@ export function MetadataSection({ title, items }: MetadataSectionProps) {
           {items.map((item) => (
             <div
               key={`${title}-${item.label}`}
-              className="rounded-2xl border border-white/70 bg-white/80 px-4 py-3"
+              className="rounded-2xl border border-[var(--color-border)] bg-[rgba(25,24,37,0.78)] px-4 py-3"
             >
-              <dt className="text-xs uppercase tracking-[0.18em] text-[var(--color-muted-foreground)]">
+              <dt className="text-xs uppercase tracking-[0.18em] text-[#FFA3FD]">
                 {item.label}
               </dt>
               <dd className="mt-2 text-sm leading-6 text-[var(--color-foreground)]/82">{item.value}</dd>
